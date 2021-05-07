@@ -1,0 +1,28 @@
+<%- include('header'); -%>
+
+	<main>
+		<div class="container">
+			<div class="row">
+				<div class="card" style="width: 18rem;">
+					<img src="<%= anime.image %>" alt="<%= anime.name %>" class="card-img-top">
+					<div class="card-body">
+						<h5 class="card-title">
+							<%= anime.name %>
+						</h5>
+						<p class="card-text">
+							<%= anime.description %>
+						</p>
+						<form method="POST" action="/delete">
+							<div>
+								<input type="hidden" value="<%= anime.id %>" name="animeId" />
+								<button class="btn btn-danger">Supprimer</button>
+							</div>
+						</form>
+						<a class="btn btn-success" href="/edit-anime/<%= anime.id %>?edit=true">Modifier</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</main>
+	<%- include('footer'); -%>

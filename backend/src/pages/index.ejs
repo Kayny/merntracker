@@ -1,0 +1,24 @@
+<%- include('header'); -%>
+
+	<main>
+		<div class="container">
+			<div class="row">
+
+				<% anime.forEach(data=> { %>
+					<div style="padding-top:10px;padding-bottom:10px;" class="col">
+						<div class="card" style="width: 18rem;">
+							<img src="<%= data.image %>" class="card-img-top" alt="<%= data.name %>">
+							<div class="card-body">
+								<h5 class="card-title">
+									<%= data.name %>
+								</h5>
+								<a href="/<%= data.id %>" class="btn btn-primary">Voir</a>
+							</div>
+						</div>
+					</div>
+					<% }) %>
+
+			</div>
+		</div>
+	</main>
+	<%- include('footer'); -%>
